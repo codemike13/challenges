@@ -15,14 +15,9 @@ const word = "world";
 
 //elegant
 String.prototype.includez = function(str) {
-  let this_words = [...this.toLowerCase().split(" ")];
-  let str_words = [...str.toLowerCase().split(" ")];
-  for (i = 0; i < this_words.length; i++) {
-    if (this_words[i] === str_words[i]) {
+  for (i = 0; i < this.length; i++) {
+    if (this.toLowerCase().slice(i, str.length + i) === str.toLowerCase())
       return true;
-    } else {
-      continue;
-    }
   }
   return false;
 };
